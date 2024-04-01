@@ -1,0 +1,6 @@
+*.py
+*.yml
+/local_data/
+/scripts
+/ckpt
+/pretrained
