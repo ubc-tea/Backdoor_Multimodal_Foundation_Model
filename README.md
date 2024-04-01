@@ -1,22 +1,57 @@
-# Backdoor_Multimodal_Foundation_Model
+# Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP
 
-This is the PyTorch implementation of Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP.
-
-Code for publically release
+This is the PyTorch implementation of [Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP](https://arxiv.org/pdf/2401.01911.pdf).
 
 ## Abstract
-TODO
+In recent years, foundation models (FMs) have solidified their role as cornerstone advancements in the deep
+learning domain. By extracting intricate patterns from vast datasets, these models consistently achieve state-of-the-art results
+across a spectrum of downstream tasks, all without necessitating extensive computational resources [1]. Notably, MedCLIP [2],
+a vision-language contrastive learning-based medical FM, has been designed using unpaired image-text training. While the
+medical domain has often adopted unpaired training to amplify data [3], the exploration of potential security concerns linked to
+this approach hasn’t kept pace with its practical usage. Notably, the augmentation capabilities inherent in unpaired training also
+indicate that minor label discrepancies can result in significant model deviations. In this study, we frame this label discrepancy
+as a backdoor attack problem. We further analyze its impact on medical FMs throughout the FM supply chain. Our evaluation
+primarily revolves around MedCLIP, emblematic of medical FM employing the unpaired strategy. We begin with an exploration
+of vulnerabilities in MedCLIP stemming from unpaired imagetext matching, termed BadMatch. BadMatch is achieved using a modest set of wrongly labeled data. Subsequently, we disrupt MedCLIP’s contrastive learning through BadDist-assisted BadMatch by introducing a Bad-Distance between the embeddings of clean and poisoned data. Intriguingly, when BadMatch and BadDist are combined, a slight 0.05 percent of misaligned image-text data can yield a staggering 99 percent attack success rate, all the while maintaining MedCLIP’s efficacy on untainted data. Additionally, combined with BadMatch and BadDist, the attacking pipeline consistently fends off backdoor assaults across diverse model designs, datasets, and triggers. Also, our findings reveal that current defense strategies are insufficient in detecting these latent threats in medical FMs’ supply chains.
 
 ## Usage
 
 ### Pretrained Models
 We release our pretrained models below. TODO.
+|  Model Name   | Link  |
+|  ----  | ----  |
+| TODO  | TODO |
+| TODO  | TODO |
+| TODO  | TODO |
 
 ### Environment
-This project is based on PyTorch 1.10. You can simply set up the environment of MedCLIP. We also provide 'environment.yml'.
+This project is based on PyTorch 1.10. You can simply set up the environment of MedCLIP. We also provide `environment.yml`.
+
+### Data
+We apply the same data format as MedCLIP, where all metadata is stored in the csv files. We provide those meta data below. For the images, you will need to follow [the instructions]((https://github.com/RyanWangZf/MedCLIP)) to download the data, which are all publically available.
+
+|  Dataset Name   | Link  |
+|  ----  | ----  |
+| MIMIC  | TODO |
+| COVID  | TODO |
+| RSNA  | TODO |
+
+_Note: change `/path/to/your/data` in each *.csv to the actual folder on your local disk._
 
 ## Citation
 If you find our project to be useful, please cite our paper.
+```
+@article{jin2024backdoor,
+  title={Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP},
+  author={Jin, Ruinan and Huang, Chun-Yin and You, Chenyu and Li, Xiaoxiao},
+  journal={arXiv preprint arXiv:2401.01911},
+  year={2024}
+}
+```
 
 ## Acknowledgements
 Our coding and design are referred to the following open source repositories. Thanks to the greate people and their amazing work.
+[MedCLIP](https://github.com/RyanWangZf/MedCLIP)
+
+## Contact
+If you have any question, feel free to [email](ruinanjin@alumni.ubc.ca). We are happy to help you.

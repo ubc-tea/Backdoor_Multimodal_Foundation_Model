@@ -38,11 +38,11 @@ class MedCLIPModelBuilder:
         if self.use_vit:
             vision_cls = MedCLIPVisionModelViT
             if not checkpoint:
-                checkpoint = './badEncoder_VIT_blackBL/1000/pytorch_model.bin'
+                checkpoint = './ckpt/pytorch_model.bin'
         else:
             vision_cls = MedCLIPVisionModel
             if not checkpoint:
-                checkpoint = './badEncoder_Resnet_blackBL/1500/pytorch_model.bin'
+                checkpoint = './ckpt/pytorch_model.bin'
 
         model = MedCLIPModel(vision_cls=vision_cls, checkpoint=checkpoint)
         model.cuda()
