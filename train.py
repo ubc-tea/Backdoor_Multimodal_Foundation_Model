@@ -15,7 +15,7 @@ from medclip import constants
 from medclip.prompts import generate_chexpert_class_prompts
 
 class AppConfig:
-    def __init__(self, bad_dist=False, stop_step=8000):
+    def __init__(self, bad_dist=False, stop_step=2000):
         self.seed = 42
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
         self.train_config = {

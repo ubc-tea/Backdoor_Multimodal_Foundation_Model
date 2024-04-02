@@ -20,7 +20,7 @@ of vulnerabilities in MedCLIP stemming from unpaired imagetext matching, termed 
 We release our pretrained models below. TODO.
 |  Model Name   | Link  |
 |  ----  | ----  |
-| TODO  | TODO |
+| ViT-COVID-Patch  | [pytorch_model](https://drive.google.com/file/d/1EMFsfcS-LIYvGXttBrbLwlRFgZg5eFZs/view?usp=sharing) |
 | TODO  | TODO |
 | TODO  | TODO |
 
@@ -33,10 +33,35 @@ We apply the same data format as MedCLIP, where all metadata is stored in the cs
 |  Dataset Name   | Link  |
 |  ----  | ----  |
 | MIMIC  | TODO |
-| COVID  | TODO |
-| RSNA  | TODO |
+| COVID  | [covid-test-meta.csv](https://drive.google.com/file/d/1n7NCn1b5oLSY-5k9lL5i_4ukKSAvMmwe/view?usp=sharing) |
+| RSNA  | [rsna-test-meta.csv](https://drive.google.com/file/d/1-YwJCiS3T3dJgpbTdy2VNyfsczEjjpLS/view?usp=sharing) |
 
 _Note: change `/path/to/your/data` in each *.csv to the actual folder on your local disk._
+
+### Train
+```
+python train.py
+```
+
+You may follow the code below for setup the training. An example is also given in the script.
+
+### Zero-shot Evaluation
+```
+python zero_shot.py
+```
+
+You may follow the code below for setup the evaluation.An example is also given in the script.
+
+```python
+evaluation1 = MainEvaluator(use_vit=True,   # True if use ViT else ResNet
+                                backdoor="none",    # "none" for no backdoor attack, "patch" for badnet trigger, "fourier" for fourier trigger
+                                trigger_size=(32,32),  # size of the trigger for patch-based trigger
+                                color=(0,0,0),   # color of the patch-based trigger
+                                position="right_bottom",   # location for the patch-based trigger
+                                checkpoint="ckpt/pytorch_model.bin",  # path for the checkpoint
+                                )
+    evaluation1.run_evaluation('covid-test')   # dataset for evaluation
+```
 
 ## Citation
 If you find our project to be useful, please cite our paper.
@@ -54,4 +79,4 @@ Our coding and design are referred to the following open source repositories. Th
 [MedCLIP](https://github.com/RyanWangZf/MedCLIP)
 
 ## Contact
-If you have any question, feel free to [email](ruinanjin@alumni.ubc.ca). We are happy to help you.
+If you have any question, feel free to [email](mailto:ruinanjin@alumni.ubc.ca) us. We are happy to help you.
