@@ -17,7 +17,7 @@ of vulnerabilities in MedCLIP stemming from unpaired imagetext matching, termed 
 ## Usage
 
 ### Pretrained Models
-We release our pretrained models below. TODO.
+We release our pretrained models below.
 |  Model Name   | Link  |
 |  ----  | ----  |
 | ViT-COVID-Patch  | [pytorch_model](https://drive.google.com/file/d/1EMFsfcS-LIYvGXttBrbLwlRFgZg5eFZs/view?usp=sharing) |
@@ -36,7 +36,7 @@ We apply the same data format as MedCLIP, where all metadata is stored in the cs
 | COVID  | [covid-test-meta.csv](https://drive.google.com/file/d/1n7NCn1b5oLSY-5k9lL5i_4ukKSAvMmwe/view?usp=sharing) |
 | RSNA  | [rsna-test-meta.csv](https://drive.google.com/file/d/1-YwJCiS3T3dJgpbTdy2VNyfsczEjjpLS/view?usp=sharing) |
 
-_Note: change `/path/to/your/data` in each *.csv to the actual folder on your local disk._
+_Note: change `/path/to/your/data` in each *.csv to the actual folder on your local disk. Before downloading sentence label from MIMIC dataset, make sure your applied and have an approved license on the physionet, which is required for access any concent for MIMIC._
 
 ### Train
 ```
@@ -60,7 +60,7 @@ evaluation1 = MainEvaluator(use_vit=True,   # True if use ViT else ResNet
                                 position="right_bottom",   # location for the patch-based trigger
                                 checkpoint="ckpt/pytorch_model.bin",  # path for the checkpoint
                                 )
-    evaluation1.run_evaluation('covid-test')   # dataset for evaluation
+evaluation1.run_evaluation('covid-test')   # dataset for evaluation
 ```
 
 ## Citation
