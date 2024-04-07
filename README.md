@@ -21,36 +21,34 @@ We release our pretrained models below.
 |  Model Name   | Link  |
 |  ----  | ----  |
 | ViT-COVID-Patch  | [pytorch_model](https://drive.google.com/file/d/1EMFsfcS-LIYvGXttBrbLwlRFgZg5eFZs/view?usp=sharing) |
-| TODO  | TODO |
-| TODO  | TODO |
+| ResNet-RSNA-Patch  | [pytorch_model](https://drive.google.com/file/d/130L1YamzbJK9A9z6iuj-YFQJFckbNI1f/view?usp=sharing) |
+| ViT-COVID-Fourier  | [pytorch_model](https://drive.google.com/file/d/1uJ32oeeUvM0MjzK2dEh6md_vg7i8eQ94/view?usp=sharing) |
 
 ### Environment
 This project is based on PyTorch 1.10. You can simply set up the environment of MedCLIP. We also provide `environment.yml`.
 
 ### Data
-We apply the same data format as MedCLIP, where all metadata is stored in the csv files. We provide those meta data below. For the images, you will need to follow [the instructions]((https://github.com/RyanWangZf/MedCLIP)) to download the data, which are all publically available.
+All of our data and meta-data are same as [MedCLIP](https://github.com/RyanWangZf/MedCLIP), please follow their instruction to download and prepare for the data. We provide the csv meta-data below
 
 |  Dataset Name   | Link  |
 |  ----  | ----  |
-| MIMIC  | TODO |
+| MIMIC  | [mimic-train-meta.csv](https://drive.google.com/file/d/1Kxx10NIBAfU14_CK5SQdSp8A1hI5NU_1/view?usp=sharing) |
 | COVID  | [covid-test-meta.csv](https://drive.google.com/file/d/1n7NCn1b5oLSY-5k9lL5i_4ukKSAvMmwe/view?usp=sharing) |
 | RSNA  | [rsna-test-meta.csv](https://drive.google.com/file/d/1-YwJCiS3T3dJgpbTdy2VNyfsczEjjpLS/view?usp=sharing) |
 
-_Note: change `/path/to/your/data` in each *.csv to the actual folder on your local disk. Before downloading sentence label from MIMIC dataset, make sure your applied and have an approved license on the physionet, which is required for access any concent for MIMIC._
+_Note: change `/path/to/your/data` in each *.csv to the actual folder on your local disk. Before downloading sentence label from MIMIC dataset, make sure you have an approved license on the physionet, which is required for access any content for MIMIC._
 
 ### Train
 ```
 python train.py
 ```
-
-You may follow the code below for setup the training. An example is also given in the script.
+An example is also given in the script.
 
 ### Zero-shot Evaluation
 ```
 python zero_shot.py
 ```
-
-You may follow the code below for setup the evaluation.An example is also given in the script.
+An example is also given in the script.
 
 ```python
 evaluation1 = MainEvaluator(use_vit=True,   # True if use ViT else ResNet
