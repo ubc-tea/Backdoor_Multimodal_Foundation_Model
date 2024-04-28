@@ -28,7 +28,7 @@ We release our pretrained models below.
 This project is based on PyTorch 1.10. You can simply set up the environment of MedCLIP. We also provide `environment.yml`.
 
 ### Data
-All of our data and meta-data are same as [MedCLIP](https://github.com/RyanWangZf/MedCLIP), please follow their instruction to download and prepare for the data. We provide the csv meta-data below
+All of our data and meta-data are same as [MedCLIP](https://github.com/RyanWangZf/MedCLIP), please follow their instruction to download and prepare for the data. We provide the csv meta-data below (put it into the local_data folder)
 
 |  Dataset Name   | Link  |
 |  ----  | ----  |
