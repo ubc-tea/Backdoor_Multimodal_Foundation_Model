@@ -77,4 +77,4 @@ Our coding and design are referred to the following open source repositories. Th
 [MedCLIP](https://github.com/RyanWangZf/MedCLIP)
 
 ## Contact
-If you have any question, feel free to [email](mailto:ruinanjin@alumni.ubc.ca) us. We are happy to help you.
+If you have any question, feel free to submit issues using this [link](https://github.com/Nanboy-Ronan/Backdoor_Multimodal_Foundation_Model) (please submit follow the link as this repo is not monitored by me) or [email](mailto:ruinanjin@alumni.ubc.ca) me. We are happy to help you.
