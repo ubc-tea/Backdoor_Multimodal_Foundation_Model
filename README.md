@@ -40,13 +40,13 @@ _Note: change `/path/to/your/data` in each *.csv to the actual folder on your lo
 
 ### Train
 ```
-python train.py
+python scripts/train.py
 ```
 An example is also given in the script.
 
 ### Zero-shot Evaluation
 ```
-python zero_shot.py
+python scripts/zero_shot.py
 ```
 An example is also given in the script.
 
