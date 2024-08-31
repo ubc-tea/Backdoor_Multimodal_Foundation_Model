@@ -64,11 +64,13 @@ evaluation1.run_evaluation('covid-test')   # dataset for evaluation
 ## Citation
 If you find our project to be useful, please cite our paper.
 ```
-@article{jin2024backdoor,
+@inproceedings{jin2024backdoor,
   title={Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP},
   author={Jin, Ruinan and Huang, Chun-Yin and You, Chenyu and Li, Xiaoxiao},
-  journal={arXiv preprint arXiv:2401.01911},
-  year={2024}
+  booktitle={2024 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)},
+  pages={272--285},
+  year={2024},
+  organization={IEEE}
 }
 ```
 
